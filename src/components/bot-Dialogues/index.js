@@ -1,0 +1,105 @@
+import React, {useState, useEffect} from "react";
+import { Link } from "react-router-dom";
+import '../../assets/styles/global.scss';
+import axios from 'axios'
+import {useHistory} from 'react-router-dom';
+import dotenv from  'dotenv'
+const BotDialogues1 = () => {
+
+
+return(
+  
+       <div>
+           <p className="text-xs text-gray-400">Iz bot 11:54 am</p>
+           <p className="text-sm mb-3">Get access to pool of tech experts across multiple domains</p>
+       </div>
+       
+);
+}
+
+export default BotDialogues1;
+
+
+export const BotDialogues4 = () => {
+
+
+    return(
+      
+           <div className="text-container">
+               <p className="text-xs text-gray-400">Iz bot 11:54 am</p>
+               <p className="text-sm mb-3">Please confirm your your contact information and best time to meet, We will send an appointment to your calender instantly.</p>
+               <p className="text-sm mb-3">Please select the date and time that you're available, also confirm your email address</p>
+           </div>
+           
+    );
+    }
+
+    export const BotDialogues2 = () => {
+
+
+        return(
+          
+               <div>
+                   <p className="text-xs text-gray-400">Iz bot 11:54 am</p>
+                   <p className="text-sm mb-3">What kind of work design & development work do you need ?</p>
+               </div>
+               
+        );
+        }
+    export const Form = (props) =>
+    {
+        const message = props.message;
+        const [email, setEmail] = useState('')
+        const [fullname, setFullname] = useState('')
+        const [username, setUsername] = useState('')
+        const [chat, setChat] = useState('')
+        const history = useHistory();
+
+        const registerUser = async () => {
+            
+            const baseUrl = process.env.REACT_APP_INVOCOM_API_URL
+            const apiVersion = process.env.REACT_APP_INVOCOM_API_VERSION
+            const entity = 'user'
+            const role = 'USER'
+            const endPoint = `${baseUrl}/${apiVersion}/${entity}/register`
+            console.log(email, fullname);
+            try {
+                const response = await axios.post(endPoint, { username, fullname, email, role })
+                console.log("response", response)
+                console.log(response.status)
+                if (response.status === 200) {
+                    localStorage.setItem('userEmail', email)
+                    const entity = 'chat'
+                    const status = true
+                    const endPoint2 = `${baseUrl}/${apiVersion}/${entity}/usermessage`
+                    console.log('eamil, message', email, message)
+                    const response = await axios.post(endPoint2, { email, message, status })
+                    console.log("response", response)
+                    console.log(response.status)
+                    if (response.status === 200) {
+                        setChat(response.data.chat);
+                        console.log(response.data.chat);
+
+                    }
+                }
+            } catch (e) {
+                console.log(e);
+            }
+        }
+            return(
+                <>
+                <div className="" style={{fontSize:"0.9rem"}}>
+                Fill in the details below and we'll zone in your project in no time!
+                </div>
+                <div className="form-wrapper">
+                    <input type="email" required placeholder="Email Address" className="input-wrapper" onChange={(e) => { setEmail(e.target.value) }}/><br />
+                    <input type="text" required placeholder="Full Name" className="input-wrapper mt-2" onChange={(e) => { setFullname(e.target.value) }}/><br />
+                    <input type="text" required placeholder="Username" className="input-wrapper mt-2" onChange={(e) => { setUsername(e.target.value) }}/><br />
+                    <Link to="/calender">
+                    <button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white" onClick={() => registerUser()}>send</button>
+                    </Link>
+                </div>
+                </>
+            );
+
+    }
