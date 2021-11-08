@@ -13,9 +13,10 @@ const ChatFooter = () => {
     const [chosenEmoji, setChosenEmoji] = useState(null);
     console.log(showEmoji);
     const onEmojiClick = (event, emojiObject) => {
-        console.log(showEmoji.emoji);
-        setChosenEmoji(emojiObject);
-        console.log(chosenEmoji);
+        
+        setChosenEmoji(emojiObject.emoji);
+        let tempString = message +' '+chosenEmoji;
+        setMessage(tempString)
     };
     const sendMessage = async () => {
         const baseUrl = process.env.REACT_APP_INVOCOM_API_URL
@@ -35,9 +36,7 @@ const ChatFooter = () => {
         }
     }
     const handleKeyPress = (e) => {
-        console.log(e.key);
         if (e.key === 'Enter') {
-            console.log('do validate');
             sendMessage();
         }
       }

@@ -69,6 +69,7 @@ export const Chooseoptions2 = (props) => {
             const response = await axios.post(endPoint, { date:updatedDate, email:email })
             if (response.status === 200) {
                localStorage.setItem('isMeeting',true);
+               history.push("/message");
             } else {
                localStorage.setItem('isMeeting',false);
                window.alert('slot already booked');
@@ -161,9 +162,7 @@ export const Chooseoptions2 = (props) => {
                     </Slider>
                     
                 </div>
-                <Link to="/message">
-                    <button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white" onClick={() => setMeeting()}>Comfirm</button>
-                    </Link>
+                <button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white" onClick={() => setMeeting()}>Comfirm</button>
                 </div>
         );
     }
