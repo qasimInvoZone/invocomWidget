@@ -10,11 +10,11 @@ require('dotenv').config()
 const ChatFooter = () => {
     const [message, setMessage] = useState('')
     const [showEmoji, setShowEmoji] = useState(false)
-    const [chosenEmoji, setChosenEmoji] = useState();
+    const [chosenEmoji, setChosenEmoji] = useState(null);
     console.log(showEmoji);
     const onEmojiClick = (event, emojiObject) => {
         
-        setChosenEmoji(emojiObject.emoji);
+        setChosenEmoji(emojiObject?.emoji);
         let tempString = message +' '+chosenEmoji;
         setMessage(tempString)
         console.log(message)
