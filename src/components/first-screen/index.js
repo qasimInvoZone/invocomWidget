@@ -51,7 +51,7 @@ return(
             <div className="mt-4 p-6" >
                 <Link to="/secondscreen">
                 <div className="First-options" style={{backgroundColor: configObj?.backgroundColor}}>
-                    <p className='First-option-text'>Hire a Tech Expert</p>
+                    <p className='First-option-text'>Hire</p>
                 </div>
                 </Link>
                 <Link to="/form">
