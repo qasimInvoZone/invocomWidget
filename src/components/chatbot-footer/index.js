@@ -13,9 +13,9 @@ const ChatFooter = () => {
     const [chosenEmoji, setChosenEmoji] = useState(null);
     console.log(showEmoji);
     const onEmojiClick = (event, emojiObject) => {
-        
+        console.log('emojis :::: ',emojiObject)
         setChosenEmoji(emojiObject.emoji);
-        let tempString = message +' '+chosenEmoji;
+        let tempString = message +' '+emojiObject.emoji;
         setMessage(tempString)
         console.log(message)
     };
