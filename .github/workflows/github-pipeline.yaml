@@ -1,0 +1,25 @@
+name: Invocom Widget Frontend Deployment
+on:
+  push:
+    branches: 'main'
+jobs:
+  push_event:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Extract branch name
+      shell: bash
+      run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+      id: extract_branch
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USER }}
+        key: ${{ secrets.SSH_KEY }}
+        port: ${{ secrets.PORT }}
+        script: |
+          cd invocom/invocomWidget
+          git reset --hard
+          git pull origin main
+          npm install
+          pm2 reload 2
