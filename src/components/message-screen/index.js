@@ -79,6 +79,7 @@ const MessageScreen = () => {
   },[io,setChat])
 
   const renderChat = (chat) => {
+    console.log(chat);
     return chat.map((message) => {
       return  <div className={`message-main ${message.senderName == 'furqan'?   'reciever':'sender'}`}>
                 <div className="d-flex align-items-start comment">
