@@ -103,10 +103,10 @@ export const BotDialogues4 = () => {
                 </div>
                 <div className="form-wrapper">
                     <input type="email" required placeholder="Email Address" className="input-wrapper" onChange={(e) => validateEmail(e)}/><br />
-                    {emailError? <span> </span> : <span style={{
+                    {emailError? <span style={{
                         fontWeight: 'bold',
                         color: 'red',
-                    }}>Invalid Email</span>}
+                    }}>Invalid Email</span> : <span> </span> }
                     <input type="text" required placeholder="Full Name" className="input-wrapper mt-2" onChange={(e) => { setFullname(e.target.value) }}/><br />
                     <input type="text" required placeholder="Username" className="input-wrapper mt-2" onChange={(e) => { setUsername(e.target.value) }}/><br />
                     <Link to="/calender">
