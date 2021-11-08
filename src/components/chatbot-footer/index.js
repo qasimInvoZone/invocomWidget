@@ -14,7 +14,7 @@ const ChatFooter = () => {
     console.log(showEmoji);
     const onEmojiClick = (event, emojiObject) => {
         
-        setChosenEmoji(emojiObject?.emoji);
+        setChosenEmoji(emojiObject);
         let tempString = message +' '+chosenEmoji;
         setMessage(tempString)
         console.log(message)
@@ -56,7 +56,7 @@ return(
                 
                 {showEmoji ? (
                     <div>
-                        <Picker onEmojiClick={onEmojiClick} /> 
+                        <Picker onEmojiClick={()=>onEmojiClick()} /> 
                     </div>
                     ) : (
                     <div className="footer-divs">
