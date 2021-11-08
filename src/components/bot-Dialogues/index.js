@@ -55,13 +55,13 @@ export const BotDialogues4 = () => {
         const [username, setUsername] = useState('')
         const [chat, setChat] = useState('')
         const history = useHistory();
-        const [emailError, setEmailError] = useState('')
+        const [emailError, setEmailError] = useState(false)
         const validateEmail = (e) => {
             setEmail(e.target.value)
             if (validator.isEmail(email)) {
-                setEmailError('Valid Email :)')
+                setEmailError(false)
             } else {
-                setEmailError('Enter valid Email!')
+                setEmailError(true)
             }
     }
 
@@ -103,10 +103,10 @@ export const BotDialogues4 = () => {
                 </div>
                 <div className="form-wrapper">
                     <input type="email" required placeholder="Email Address" className="input-wrapper" onChange={(e) => validateEmail(e)}/><br />
-                    <span style={{
+                    {emailError? <span> </span> : <span style={{
                         fontWeight: 'bold',
                         color: 'red',
-                    }}>{emailError}</span>
+                    }}>Invalid Email</span>}
                     <input type="text" required placeholder="Full Name" className="input-wrapper mt-2" onChange={(e) => { setFullname(e.target.value) }}/><br />
                     <input type="text" required placeholder="Username" className="input-wrapper mt-2" onChange={(e) => { setUsername(e.target.value) }}/><br />
                     <Link to="/calender">
