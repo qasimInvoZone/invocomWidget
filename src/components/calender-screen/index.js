@@ -32,7 +32,6 @@ return(
                     </div>
                 <Scheduler />
                 </div>
-                <ChatFooter />
                 </div>
             </div></>
    

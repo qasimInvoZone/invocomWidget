@@ -32,7 +32,7 @@ return(
                    <Chooseoptions2 data={props.location.state}/>
                 </div>
                 <div className="" style={{marginTop:"2rem"}}>
-                <ChatFooter />
+
                 </div>
             </div></>
    

@@ -42,7 +42,6 @@ return(
                 </div>
                 </div>
                 <div className="">
-                <ChatFooter />
                 </div>
             </div></>
    

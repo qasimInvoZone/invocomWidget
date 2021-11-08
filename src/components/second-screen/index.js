@@ -44,7 +44,6 @@ useEffect(() => {
               <BotDialogues1 />
               <ChooseOption1 questions={questions}/>
             </div>
-            <ChatFooter />
           </div>
         </>
       ) : (
