@@ -56,7 +56,7 @@ return(
                 
                 {showEmoji ? (
                     <div>
-                        <Picker onEmojiClick={()=>onEmojiClick} /> 
+                        <Picker onEmojiClick={(event, emojiObject)=>onEmojiClick(event, emojiObject)} /> 
                     </div>
                     ) : (
                     <div className="footer-divs">
