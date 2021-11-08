@@ -109,9 +109,9 @@ export const BotDialogues4 = () => {
                     }}>Invalid Email</span> : <span> </span> }
                     <input type="text" required placeholder="Full Name" className="input-wrapper mt-2" onChange={(e) => { setFullname(e.target.value) }}/><br />
                     <input type="text" required placeholder="Username" className="input-wrapper mt-2" onChange={(e) => { setUsername(e.target.value) }}/><br />
-                    {emailError? <Link to="/calender">
+                    {emailError? <button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button> : <Link to="/calender">
                     <button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white" onClick={() => registerUser()}>send</button>
-                    </Link> : <button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button>}
+                    </Link>}
                     
                 </div>
                 </>
