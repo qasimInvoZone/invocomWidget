@@ -18,6 +18,7 @@ const history = useHistory();
 
 const email = localStorage.getItem('userEmail');
 if(email){
+    // if user is deleted form DB clear Local Storage
     history.push('/message');
 }
 

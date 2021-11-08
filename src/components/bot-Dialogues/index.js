@@ -4,6 +4,7 @@ import '../../assets/styles/global.scss';
 import axios from 'axios'
 import {useHistory} from 'react-router-dom';
 import dotenv from  'dotenv'
+import validator from 'validator'
 const BotDialogues1 = () => {
 
 
@@ -54,6 +55,15 @@ export const BotDialogues4 = () => {
         const [username, setUsername] = useState('')
         const [chat, setChat] = useState('')
         const history = useHistory();
+        const [emailError, setEmailError] = useState('')
+        const validateEmail = (e) => {
+            setEmail(e.target.value)
+            if (validator.isEmail(email)) {
+                setEmailError('Valid Email :)')
+            } else {
+                setEmailError('Enter valid Email!')
+            }
+    }
 
         const registerUser = async () => {
             
@@ -92,7 +102,11 @@ export const BotDialogues4 = () => {
                 Fill in the details below and we'll zone in your project in no time!
                 </div>
                 <div className="form-wrapper">
-                    <input type="email" required placeholder="Email Address" className="input-wrapper" onChange={(e) => { setEmail(e.target.value) }}/><br />
+                    <input type="email" required placeholder="Email Address" className="input-wrapper" onChange={(e) => validateEmail(e)}/><br />
+                    <span style={{
+                        fontWeight: 'bold',
+                        color: 'red',
+                    }}>{emailError}</span>
                     <input type="text" required placeholder="Full Name" className="input-wrapper mt-2" onChange={(e) => { setFullname(e.target.value) }}/><br />
                     <input type="text" required placeholder="Username" className="input-wrapper mt-2" onChange={(e) => { setUsername(e.target.value) }}/><br />
                     <Link to="/calender">
