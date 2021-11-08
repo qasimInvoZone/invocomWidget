@@ -17,6 +17,7 @@ const ChatFooter = () => {
         setChosenEmoji(emojiObject.emoji);
         let tempString = message +' '+chosenEmoji;
         setMessage(tempString)
+        console.log(message)
     };
     const sendMessage = async () => {
         const baseUrl = process.env.REACT_APP_INVOCOM_API_URL
