@@ -49,12 +49,11 @@ return(
                         <Picker onEmojiClick={(event, emojiObject)=>onEmojiClick(event, emojiObject)} /> 
                     </div>
                     ) : (
-                    <div className="footer-divs">
-                        <img src={emoji} alt="" onClick={() => setShowEmoji(true)}/>
-                    </div>
+                    ''
                     )
                 }
             <div className="footer-divs">
+                <img src={emoji} alt="" onClick={() => setShowEmoji(true)}/>
             <img src={send_icon} alt="" onClick={() => sendMessage()}/>
             </div>
             </div>
