@@ -79,6 +79,7 @@ export const BotDialogues4 = () => {
                 console.log(response.status)
                 if (response.status === 200) {
                     localStorage.setItem('userEmail', email)
+                    localStorage.setItem('username', username)
                     const entity = 'chat'
                     const status = true
                     const endPoint2 = `${baseUrl}/${apiVersion}/${entity}/usermessage`
