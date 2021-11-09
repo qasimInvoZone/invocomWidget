@@ -206,13 +206,6 @@
     .comment_img {
       width: 2rem;
     }
-    .comment_name {
-      font-size: 0.5rem;
-    }
-  
-    .comment_desc {
-      font-size: 0.6rem;
-    }
   
     .comment_date {
       font-size: 0.5rem;
@@ -233,4 +226,6 @@
 .emoji_picker{
     position: absolute;
     bottom: 0;
+    transform: translateY(-15%);
+
 }

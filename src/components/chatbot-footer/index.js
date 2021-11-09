@@ -41,11 +41,11 @@ return(
         <div className=" border-t border-blue-500 rounded-br-lg rounded-bl-lg p-2">
             <div className="inner_container flex justify-center ">
             <div className="input_container">
-            <input className="outline-none" style={{width: '100%'}} type="text" value={message} placeholder="Type here..." onClick={() => {showEmoji? setShowEmoji(false) : setShowEmoji(true)}} onChange={(e) => { setMessage(e.target.value) }} onKeyPress={(e) => handleKeyPress(e)}/>
+            <input className="outline-none" style={{width: '100%'}} type="text" value={message} placeholder="Type here..." onClick={() => setShowEmoji(false)} onChange={(e) => { setMessage(e.target.value) }} onKeyPress={(e) => handleKeyPress(e)}/>
             </div>
             <div className="icon_container flex justify-end relative ">                
                 {showEmoji ? (
-                    <div className="emoji_picker">
+                    <div className="emoji_picker" onClick={() => {showEmoji? setShowEmoji(false) : setShowEmoji(true)}}>
                         <Picker onEmojiClick={(event, emojiObject)=>onEmojiClick(event, emojiObject)} /> 
                     </div>
                     ) : (
