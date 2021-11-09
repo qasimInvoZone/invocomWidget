@@ -82,6 +82,7 @@
     border: 1px solid #4182f6;
     padding: 0.3rem 1.5rem;
     border-radius: 8px;
+    width: 100%;
 }
 .form-wrapper button {
     width: 100%;
@@ -108,7 +109,30 @@
     max-height: 150px;
 
 }
-
+.invalid-data{
+    position: relative;
+    span{
+        position: absolute;
+        background: rgb(209, 61, 61);
+        color: white !important;
+        border-radius: 10px;
+        // border: 1px solid red;
+        padding: 1rem 1rem;
+        top: 0;
+        right: 0;
+        transform: translate(-250% , -20%);
+        &::after{
+            height: 20px;
+            width: 20px;
+            background: rgb(209, 61, 61);
+            position: absolute;
+            top: 35%;
+            left: 90%;
+            transform: rotate(45deg);
+            content: '';
+        }
+    }
+}
 .inner_container{
     .input_container{
         width: 100%;
