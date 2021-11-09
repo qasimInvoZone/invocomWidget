@@ -55,6 +55,28 @@
 .form-wrapper {
     max-width: 70%;
     margin: auto;
+    position: relative;
+        span{
+            position: absolute;
+            background: rgb(209, 61, 61);
+            color: white !important;
+            border-radius: 10px;
+            // border: 1px solid red;
+            padding: 1rem 1rem;
+            top: 0;
+            right: 0;
+            transform: translate(-250% , -20%);
+            &::after{
+                height: 20px;
+                width: 20px;
+                background: rgb(209, 61, 61);
+                position: absolute;
+                top: 35%;
+                left: 90%;
+                transform: rotate(45deg);
+                content: '';
+            }
+        }
 }
 .input-wrapper {
     border: 1px solid #4182f6;
@@ -68,7 +90,7 @@
   .second_screen_size{
       max-width: 450px !important;
       width: 100% !important;
-      height: 600px;
+      height: 550px;
   }
   .calender_screen_size{
       max-width: 750px !important;

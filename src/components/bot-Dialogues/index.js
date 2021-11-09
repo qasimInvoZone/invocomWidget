@@ -98,21 +98,12 @@ export const BotDialogues4 = () => {
                 </div>
                 <div className="form-wrapper">
                     <input type="email" required placeholder="Email Address" className="input-wrapper" onChange={(e) => validateEmail(e)}/><br />
-                    {emailError? <span style={{
-                        fontWeight: 'bold',
-                        color: 'red',
-                    }}>Invalid Email</span> : <span> </span> }
+                    {emailError? <span>Invalid Email</span> : '' }
                     <input type="text" required placeholder="Full Name" className="input-wrapper mt-2" onChange={(e) => { setFullname(e.target.value) }}/><br />
                     <input type="text" required placeholder="Username" className="input-wrapper mt-2" onChange={(e) => { setUsername(e.target.value) }}/><br />
                     {emailError && email!='' && username!='' && fullname !='' ? 
-                        (<><span style={{
-                            fontWeight: 'bold',
-                            color: 'red',
-                        }}> Invalid Data </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button></> )
-                        : isExist? <><span style={{
-                                fontWeight: 'bold',
-                                color: 'red',
-                            }}> User Already Exists </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button></> 
+                        (<><span> Invalid Data </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button></> )
+                        : isExist? <><span> User Already Exists </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button></> 
                         : <button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white" onClick={() => registerUser()}>send</button>
                         
                     }
