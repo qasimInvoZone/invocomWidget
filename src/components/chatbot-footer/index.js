@@ -43,11 +43,7 @@ return(
             <div className="input_container">
             <input className="outline-none" style={{width: '100%'}} type="text" value={message} placeholder="Type here..." onClick={() => {showEmoji? setShowEmoji(false) : setShowEmoji(true)}} onChange={(e) => { setMessage(e.target.value) }} onKeyPress={(e) => handleKeyPress(e)}/>
             </div>
-            <div className="icon_container flex justify-end relative ">
-            <div className="footer-divs">
-            </div>
-            
-                
+            <div className="icon_container flex justify-end relative ">                
                 {showEmoji ? (
                     <div className="emoji_picker">
                         <Picker onEmojiClick={(event, emojiObject)=>onEmojiClick(event, emojiObject)} /> 
@@ -58,8 +54,6 @@ return(
                     </div>
                     )
                 }
-                             
-
             <div className="footer-divs">
             <img src={send_icon} alt="" onClick={() => sendMessage()}/>
             </div>
