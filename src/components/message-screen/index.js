@@ -89,7 +89,7 @@ const MessageScreen = () => {
                   <div className="comment_item">
                     <span className="comment_desc">{message.message}</span>
                   </div>
-                  <p> {moment(message.createdAt).format("hA")} </p>
+                  <p> {moment(message.createdAt).format("hh:mm a")} </p>
                 </div>
                 
                 <AlwaysScrollToBottom />
