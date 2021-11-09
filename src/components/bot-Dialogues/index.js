@@ -67,7 +67,6 @@ export const BotDialogues4 = () => {
     }
 
         const registerUser = async () => {
-            setIsExist(false);
             const baseUrl = process.env.REACT_APP_INVOCOM_API_URL
             const apiVersion = process.env.REACT_APP_INVOCOM_API_VERSION
             const entity = 'user'
