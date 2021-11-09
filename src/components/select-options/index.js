@@ -79,7 +79,7 @@ export const Chooseoptions2 = (props) => {
       }
       const days = []
       const dateStart = moment()
-      const dateEnd = moment().add(30, 'days')
+      const dateEnd = moment().add(7, 'days')
       while (dateEnd.diff(dateStart, 'days') >= 0) {
        days.push(dateStart._d.toString())
        dateStart.add(1, 'days')
