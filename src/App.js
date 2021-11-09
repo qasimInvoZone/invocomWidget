@@ -11,7 +11,6 @@ import MessageScreen from './components/message-screen';
 ///testing
 require('dotenv').config()
 const App = () => {
-  console.log("ENV",process.env.NODE_ENV)
   return (
     <div className="App">
       <APIContextProvider>

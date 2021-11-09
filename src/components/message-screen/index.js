@@ -21,7 +21,6 @@ const AlwaysScrollToBottom = () => {
 const MessageScreen = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [chat , setChat] = useState([]);
-  console.log(process.env.REACT_APP_INVOCOM_API_URL);
   const ENDPOINT = process.env.REACT_APP_INVOCOM_API_URL;
   
   const fetchChats = async () => {
@@ -32,7 +31,6 @@ const MessageScreen = () => {
     const email = localStorage.getItem('userEmail');
     if( email ){
       const response = await axios.post(endPoint, { email })
-      console.log(response)
       if (response.status == 200) {
         if (response?.data?.data?.chats[0]?.messages?.length > 0) {
           setChat(response?.data?.data?.chats[0]?.messages);
@@ -58,7 +56,6 @@ const MessageScreen = () => {
 
 
     socket.on('sendNewMessageToClient', (updatedChat) => {
-      console.log(updatedChat)
       const email = localStorage.getItem('userEmail')
 
       if (
@@ -69,7 +66,6 @@ const MessageScreen = () => {
     })
 
     socket.on('newMessageFromClient', (updatedChat) => {
-      console.log(updatedChat)
       const email = localStorage.getItem('userEmail');
       if (
         chat && (JSON.stringify(updatedChat.client.email) === JSON.stringify(email))
@@ -80,7 +76,6 @@ const MessageScreen = () => {
   },[io,setChat])
 
   const renderChat = (chat) => {
-    console.log(chat);
     const leadName = localStorage.getItem('username')
     return chat.map((message) => {
       return  <div className={`message-main ${message.senderName == leadName?   'sender': 'reciever'}`}>

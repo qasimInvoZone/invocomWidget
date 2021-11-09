@@ -7,12 +7,9 @@ import '../../assets/styles/global.scss';
 const formScreen = (props) => {
     let messages = [];
     if(props.location.state){
-        console.log("data from thirs screen", props?.location?.state)
         const message = props?.location?.state?.selectedQuestions;
         const nextMessage = props?.location?.state?.data?.questionStatement;
         messages = [...message, nextMessage]
-        console.log('message',messages);
-        console.log('nextMessage',nextMessage);
     }
     
     // eslint-disable-next-line react-hooks/rules-of-hooks

@@ -73,21 +73,15 @@ export const BotDialogues4 = () => {
             const entity = 'user'
             const role = 'USER'
             const endPoint = `${baseUrl}/${apiVersion}/${entity}/register`
-            console.log(email, fullname);
             try {
                 const response = await axios.post(endPoint, { username, fullname, email, role })
-                console.log("response", response)
-                console.log(response.status)
                 if (response.status === 200) {
                     localStorage.setItem('userEmail', email)
                     localStorage.setItem('username', username)
                     const entity = 'chat'
                     const status = true
                     const endPoint2 = `${baseUrl}/${apiVersion}/${entity}/usermessage`
-                    console.log('eamil, message', email, message)
                     const response = await axios.post(endPoint2, { email, message, status })
-                    console.log("response", response)
-                    console.log(response.status)
                     if (response.status === 200) {  
                         setChat(response.data.chat);
                         history.push("/calender")
@@ -95,7 +89,6 @@ export const BotDialogues4 = () => {
                 }
             } catch (e) {
                 setIsExist(true);
-                console.log(e);
             }
         }
             return(

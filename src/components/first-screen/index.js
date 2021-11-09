@@ -24,7 +24,6 @@ if(email){
 
 const context = useAPI()
 
-console.log(context);
 useEffect(() => {
     setconfigObj(context.data.configObj)
  }, [context]);

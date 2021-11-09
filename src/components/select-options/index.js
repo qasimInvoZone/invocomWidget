@@ -8,9 +8,7 @@ import '../../assets/styles/global.scss';
 require('dotenv').config()
 var moment = require('moment');
 moment().format();
-const displayQuestions = (questions) => {
-    console.log("props",questions)
-    
+const displayQuestions = (questions) => {    
     return questions.map((question) => {
         return  <Link to={{ pathname: '/thirdscreen', state: { data: question} }}>
                     <div className="second-options">
@@ -40,7 +38,6 @@ export const Chooseoptions2 = (props) => {
     const history = useHistory();
     const selectedQuestions = [];
     selectedQuestions.push(props.data.data.questionStatement);
-    console.log("props",props)
     return <div className="container second-screen">
      { props.data.data.childrens ? displayQuestions2(props.data.data.childrens,selectedQuestions) : history.push('/form')}
     </div>
@@ -78,7 +75,6 @@ export const Chooseoptions2 = (props) => {
          } catch (e) {
             localStorage.setItem('isMeeting',false);
             window.alert('Slot already booked please please try another Date & Time');
-            console.log(e.response);
          }
       }
       const days = []

@@ -11,13 +11,10 @@ const ChatFooter = () => {
     const [message, setMessage] = useState('')
     const [showEmoji, setShowEmoji] = useState(false)
     const [chosenEmoji, setChosenEmoji] = useState(null);
-    console.log(showEmoji);
     const onEmojiClick = (event, emojiObject) => {
-        console.log('emojis :::: ',emojiObject)
         setChosenEmoji(emojiObject.emoji);
         let tempString = message +' '+emojiObject.emoji;
         setMessage(tempString)
-        console.log(message)
     };
     const sendMessage = async () => {
         const baseUrl = process.env.REACT_APP_INVOCOM_API_URL
@@ -27,13 +24,11 @@ const ChatFooter = () => {
         const email = localStorage.getItem('userEmail')
         try {
             const response = await axios.post(endPoint, { email, message })
-            console.log("response", response)
-            console.log(response.status)
             if(response.status == 200){
                 setMessage('');
             }
         } catch (e) {
-            console.log(e);
+            
         }
     }
     const handleKeyPress = (e) => {

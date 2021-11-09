@@ -16,15 +16,11 @@ useEffect(() => {
       const apiVersion = process.env.REACT_APP_INVOCOM_API_VERSION
       const entity = 'question'
       const endPoint = `${baseUrl}/${apiVersion}/${entity}/`
-      console.log("in questions");
       try {
-        console.log("in questions try");
         const response = await axios.get(endPoint);
-        console.log("response", response.data.questions.childrens);
         setQuestions(response.data.questions.childrens);
-        console.log("state", questions);
       } catch (e) {
-          console.log(e);
+
       }
     }
     fetchQuestions()

@@ -6,7 +6,6 @@ import { BotDialogues2 } from "../bot-Dialogues";
 import messageicon from '../../assets/icons/message-icon.svg';
 import '../../assets/styles/global.scss';
 const ThirdScreen = (props) => {
-    console.log(props.location.state);
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [questions , setQuestions] = useState({});
 
