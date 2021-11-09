@@ -45,7 +45,7 @@ return(
             </div>
             <div className="icon_container flex justify-end relative ">                
                 {showEmoji ? (
-                    <div className="emoji_picker" onClick={() => {showEmoji? setShowEmoji(false) : setShowEmoji(true)}}>
+                    <div className="emoji_picker">
                         <Picker onEmojiClick={(event, emojiObject)=>onEmojiClick(event, emojiObject)} /> 
                     </div>
                     ) : (
@@ -53,7 +53,9 @@ return(
                     )
                 }
             <div className="footer-divs">
-                <img src={emoji} alt="" onClick={() => setShowEmoji(true)}/>
+                <img src={emoji} alt="" onClick={() => showEmoji? setShowEmoji(false) : setShowEmoji(true)}/>
+            </div>
+            <div className="footer-divs">
             <img src={send_icon} alt="" onClick={() => sendMessage()}/>
             </div>
             </div>

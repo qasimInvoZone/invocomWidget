@@ -16,7 +16,7 @@
         @apply text-white sm:text-xs;
     }
     .footer-divs{
-        @apply w-8 h-8 flex justify-center items-center border  border-gray-100 rounded-full text-xs
+        @apply w-8 h-8 flex justify-evenly items-center border  border-gray-100 rounded-full text-xs
     }
     .input-style{
         @apply  w-1/2 border border-blue-500 focus:outline-none focus:ring focus:border-blue-300 rounded pt-1 px-2    }
