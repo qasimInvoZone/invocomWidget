@@ -54,6 +54,7 @@ export const BotDialogues4 = () => {
         const [fullname, setFullname] = useState('')
         const [username, setUsername] = useState('')
         const [chat, setChat] = useState('')
+        const [isExist, setIsExist] = useState(false)
         const history = useHistory();
         const [emailError, setEmailError] = useState(false)
         const validateEmail = (e) => {
@@ -87,13 +88,13 @@ export const BotDialogues4 = () => {
                     const response = await axios.post(endPoint2, { email, message, status })
                     console.log("response", response)
                     console.log(response.status)
-                    if (response.status === 200) {
+                    if (response.status === 200) {  
                         setChat(response.data.chat);
-                        console.log(response.data.chat);
-
+                        history.push("/calender")
                     }
                 }
             } catch (e) {
+                setIsExist(true);
                 console.log(e);
             }
         }
@@ -110,10 +111,18 @@ export const BotDialogues4 = () => {
                     }}>Invalid Email</span> : <span> </span> }
                     <input type="text" required placeholder="Full Name" className="input-wrapper mt-2" onChange={(e) => { setFullname(e.target.value) }}/><br />
                     <input type="text" required placeholder="Username" className="input-wrapper mt-2" onChange={(e) => { setUsername(e.target.value) }}/><br />
-                    {emailError? <button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button> : <Link to="/calender">
-                    <button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white" onClick={() => registerUser()}>send</button>
-                    </Link>}
-                    
+                    {emailError && email!='' && username!='' && fullname !='' ? 
+                        (<><span style={{
+                            fontWeight: 'bold',
+                            color: 'red',
+                        }}> Invalid Data </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button></> )
+                        : isExist? <><span style={{
+                                fontWeight: 'bold',
+                                color: 'red',
+                            }}> User Already Exists </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button></> 
+                        : <button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white" onClick={() => registerUser()}>send</button>
+                        
+                    }
                 </div>
                 </>
             );
