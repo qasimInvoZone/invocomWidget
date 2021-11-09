@@ -10,7 +10,7 @@ const ThirdScreen = (props) => {
     const [questions , setQuestions] = useState({});
 
 return(
-    <div className="complete_bot second_screen_size">
+    <div className="complete_bot third_screen_size">
        
         {questions? 
          <>
