@@ -67,7 +67,7 @@ export const BotDialogues4 = () => {
     }
 
         const registerUser = async () => {
-            
+            setIsExist(false);
             const baseUrl = process.env.REACT_APP_INVOCOM_API_URL
             const apiVersion = process.env.REACT_APP_INVOCOM_API_VERSION
             const entity = 'user'
@@ -102,7 +102,7 @@ export const BotDialogues4 = () => {
                     <input type="text" required placeholder="Full Name" className="input-wrapper mt-2" onChange={(e) => { setFullname(e.target.value) }}/><br />
                     <input type="text" required placeholder="Username" className="input-wrapper mt-2" onChange={(e) => { setUsername(e.target.value) }}/><br />
                     {emailError || email =='' || username == '' || fullname == '' ? 
-                        (<div className="invalid-data"><span> Invalid Data </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button></div> )
+                        (<div className="invalid-data"><span> Cannot set Empty user data </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button></div> )
                         : isExist? <div className="user-exist"><span> User Already Exists </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button></div> 
                         : <button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white" onClick={() => registerUser()}>send</button>
                         
