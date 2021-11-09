@@ -8,6 +8,7 @@ import '../../assets/styles/global.scss';
 import './index.css';
 import axios from 'axios'
 import { io } from "socket.io-client";
+var moment = require('moment');
 require('dotenv').config()
 
 
@@ -88,7 +89,7 @@ const MessageScreen = () => {
                   <div className="comment_item">
                     <span className="comment_desc">{message.message}</span>
                   </div>
-                  <p> 11 AM </p>
+                  <p> {moment(message.createdAt).format("hA")} </p>
                 </div>
                 
                 <AlwaysScrollToBottom />
