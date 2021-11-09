@@ -80,8 +80,9 @@ const MessageScreen = () => {
 
   const renderChat = (chat) => {
     console.log(chat);
+    const leadName = localStorage.getItem('username')
     return chat.map((message) => {
-      return  <div className={`message-main ${message.senderName == 'furqan'?   'reciever':'sender'}`}>
+      return  <div className={`message-main ${message.senderName == leadName?   'reciever':'sender'}`}>
                 <div className="d-flex align-items-start comment">
                   
                   <div className="comment_item">
