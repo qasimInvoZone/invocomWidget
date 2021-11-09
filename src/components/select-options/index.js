@@ -132,28 +132,28 @@ export const Chooseoptions2 = (props) => {
             <div className="flex justify-center mb-2">
                     <Slider className="slider_comp" {...settings}>
                         <div className="calender-style" onClick={() => { setTime('8:00') }}>
-                           <p className="text-xs" >8:00<br /> am</p>
+                           <p className="text-xs text-center" >8:00<br /> am</p>
                         </div >
                         <div className="calender-style" onClick={() => { setTime('8:30') }}>
-                           <p className="text-xs">8:30<br /> am</p>
+                           <p className="text-xs text-center">8:30<br /> am</p>
                         </div >
                         <div className="calender-style" onClick={() => { setTime('9:00') }}>
-                           <p className="text-xs">9:00<br /> am</p>
+                           <p className="text-xs text-center">9:00<br /> am</p>
                         </div >
                         <div className="calender-style" onClick={() => { setTime('9:30') }}>
-                           <p className="text-xs">9:30<br /> am</p>
+                           <p className="text-xs text-center">9:30<br /> am</p>
                         </div >
                         <div className="calender-style" onClick={() => { setTime('10:00') }}>
-                           <p className="text-xs">10:00<br /> am</p>
+                           <p className="text-xs text-center">10:00<br /> am</p>
                         </div >
                         <div className="calender-style" onClick={() => { setTime('10:30') }}>
-                           <p className="text-xs">10:30<br /> am</p>
+                           <p className="text-xs text-center">10:30<br /> am</p>
                         </div >
                         <div className="calender-style" onClick={() => { setTime('11:00') }}>
-                           <p className="text-xs">11:00<br /> am</p>
+                           <p className="text-xs text-center">11:00<br /> am</p>
                         </div >
                         <div className="calender-style" onClick={() => { setTime('8:00') }}>
-                           <p className="text-xs" >11:30<br /> am</p>
+                           <p className="text-xs text-center" >11:30<br /> am</p>
                         </div >
                     </Slider>
                     
