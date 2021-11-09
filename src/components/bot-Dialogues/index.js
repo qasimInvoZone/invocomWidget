@@ -103,7 +103,7 @@ export const BotDialogues4 = () => {
                     <input type="text" required placeholder="Username" className="input-wrapper mt-2" onChange={(e) => { setUsername(e.target.value) }}/><br />
                     {emailError && email!='' && username!='' && fullname !='' ? 
                         (<div className="invalid-data"><span> Invalid Data </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button></div> )
-                        : isExist? <><span> User Already Exists </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button></> 
+                        : isExist? <div className="invalid-data"><span> User Already Exists </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button></div> 
                         : <button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white" onClick={() => registerUser()}>send</button>
                         
                     }
