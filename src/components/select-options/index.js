@@ -158,7 +158,7 @@ export const Chooseoptions2 = (props) => {
                     </Slider>
                     
                 </div>
-                <button className="w-full bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white" onClick={() => setMeeting()}>Comfirm</button>
+                <button className="w-full bg-blue-500 rounded py-2 px-2 mt-2 text-sm text-white" onClick={() => setMeeting()}>Comfirm</button>
                 </div>
         );
     }
