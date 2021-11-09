@@ -120,6 +120,21 @@ export const Chooseoptions2 = (props) => {
             <p className="text-xs">{dayInfo[2]}</p>
          </div >
           }
+          const timeSlots = {
+            nextSlot: 30,
+            startTime: '8:00 ',
+            endTime: '12:30 '
+         };
+         var slotTime = moment(timeSlots.startTime, "hh:mm a");
+         var endTime = moment(timeSlots.endTime, "hh:mm a");
+         let times = [];
+         while (slotTime < endTime)
+         {
+          //if (!isInBreak(slotTime, timeSlots.breakTime)) {
+             times.push(slotTime.format("hh:mm a"));
+         // }
+          slotTime = slotTime.add(timeSlots.nextSlot, 'minutes');
+         }         
         return(
             <div className="width">
             <div className="flex justify-center mb-2">
@@ -130,35 +145,15 @@ export const Chooseoptions2 = (props) => {
                     </Slider>
                 </div>
             <div className="flex justify-center mb-2">
-                    <Slider className="slider_comp" {...settings}>
-                        <div className="calender-style" onClick={() => { setTime('8:00') }}>
-                           <p className="text-xs" >8:00<br /> am</p>
-                        </div >
-                        <div className="calender-style" onClick={() => { setTime('8:00') }}>
-                           <p className="text-xs" >8:00<br /> am</p>
-                        </div >
-                        <div className="calender-style" onClick={() => { setTime('8:30') }}>
-                           <p className="text-xs">8:30<br /> am</p>
-                        </div >
-                        <div className="calender-style" onClick={() => { setTime('9:00') }}>
-                           <p className="text-xs">9:00<br /> am</p>
-                        </div >
-                        <div className="calender-style" onClick={() => { setTime('9:30') }}>
-                           <p className="text-xs">9:30<br /> am</p>
-                        </div >
-                        <div className="calender-style" onClick={() => { setTime('10:00') }}>
-                           <p className="text-xs">10:00<br /> am</p>
-                        </div >
-                        <div className="calender-style" onClick={() => { setTime('10:30') }}>
-                           <p className="text-xs">10:30<br /> am</p>
-                        </div >
-                        <div className="calender-style" onClick={() => { setTime('11:00') }}>
-                           <p className="text-xs">11:00<br /> am</p>
-                        </div >
-                    </Slider>
-                    
-                </div>
-                <button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white" onClick={() => setMeeting()}>Comfirm</button>
-                </div>
+            <Slider className="slider_comp" {...settings}>
+               {times.map((slotTime,id) =>
+                  <div className="calender-style">
+                     <p className="text-xs text-center" key={id}>{slotTime}</p>
+                  </div >
+               )}
+            </Slider>
+            </div>
+            <button className="w-full bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white" onClick={() => setMeeting()}>Comfirm</button>
+            </div>
         );
     }

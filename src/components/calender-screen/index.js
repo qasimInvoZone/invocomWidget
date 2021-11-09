@@ -19,7 +19,7 @@ return(
 
          <ChatHead />
             
-        <div className="px-6 pt-2" style={{height: '170px'}}>
+        <div className="px-6 pt-2" style={{height: '185px'}}>
         <BotDialogues4 />
         </div>
                 <div className="px-4 ">
