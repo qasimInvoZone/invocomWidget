@@ -96,7 +96,7 @@ const MessageScreen = () => {
         <>
           <div className=" border border-blue-400 rounded-lg">
             <ChatHead />
-            <div className="message_body" style={{height:"450px"}}>
+            <div className="message_body" style={{height:"350px"}}>
               {renderChat(chat)}
             </div>
             <ChatFooter />
