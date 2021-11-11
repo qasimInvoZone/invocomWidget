@@ -50,6 +50,7 @@ export const BotDialogues4 = () => {
     export const Form = (props) =>
     {
         const message = props.message;
+        console.log(message);
         const [email, setEmail] = useState('')
         const [fullname, setFullname] = useState('')
         const [username, setUsername] = useState('')

@@ -6,8 +6,10 @@ import messageicon from '../../assets/icons/message-icon.svg';
 import '../../assets/styles/global.scss';
 const formScreen = (props) => {
     let message;
+    console.log(props);
+
     if(props.location.state){
-        message = props?.location?.state?.questions;
+        message = props?.location?.state?.messages;
     }
     
     // eslint-disable-next-line react-hooks/rules-of-hooks
