@@ -5,11 +5,9 @@ import { Form } from '../bot-Dialogues';
 import messageicon from '../../assets/icons/message-icon.svg';
 import '../../assets/styles/global.scss';
 const formScreen = (props) => {
-    let messages = [];
+    let message;
     if(props.location.state){
-        const message = props?.location?.state?.selectedQuestions;
-        const nextMessage = props?.location?.state?.data?.questionStatement;
-        messages = [...message, nextMessage]
+        message = props?.location?.state?.questions;
     }
     
     // eslint-disable-next-line react-hooks/rules-of-hooks
@@ -32,8 +30,8 @@ return(
 
                 <div className="p-4 mt-2">
                 <div>
-                {messages ?
-                    <Form message={messages}/> : 
+                {message ?
+                    <Form message={message}/> : 
                     <Form />
                 }
                 </div>

@@ -7,6 +7,7 @@ import messageIcon from '../../assets/icons/message-icon.svg';
 import axios from 'axios'
 import {useHistory} from 'react-router-dom';
 import { useAPI }  from '../context/widgetconfig';
+import { questions } from "../../assets/questions";
 
 const ChatBot = () => {
 
@@ -25,6 +26,7 @@ if(email){
 const context = useAPI()
 
 useEffect(() => {
+    console.log("Questionsssss : : : : : ",questions);
     setconfigObj(context.data.configObj)
  }, [context]);
 
@@ -43,26 +45,23 @@ return(
                 </div>
             </div>
            <div className="p-6" > 
-            <h2 className="text-lg  font-semibold">{configObj?.backgroundStatus}</h2>
-            <h3 className="text-base  text-gray-400">{configObj?.message}</h3>
+            <h2 className="text-lg  font-semibold">Hi, I’m here to help you find your way.</h2>
+            <h3 className="text-base  text-gray-400">{questions.Screen1.questionStatement}</h3>
             </div>
 
             <div className="mt-4 p-6" >
                 <Link to="/secondscreen">
                 <div className="First-options" style={{backgroundColor: configObj?.backgroundColor}}>
-                    <p className='First-option-text'>Hire a Tech Expert</p>
+                    <p className='First-option-text'>{questions.Screen1.Questions[0]}</p>
                 </div>
                 </Link>
                 <Link to="/form">
                 <div className="First-options" style={{backgroundColor: configObj?.backgroundColor}}>
-                    <p className='First-option-text'>Ask a Question</p>
+                    <p className='First-option-text'>{questions.Screen1.Questions[1]}</p>
                 </div>
                 </Link>
                 <div className="First-options" style={{backgroundColor: configObj?.backgroundColor}}>
-                    <p className='First-option-text'>Learn About InvoZone</p>
-                </div>
-                <div className="First-options" style={{backgroundColor: configObj?.backgroundColor}}>
-                    <p className='First-option-text'>Can't find what you're looking for?</p>
+                    <p className='First-option-text'>{questions.Screen1.Questions[2]}</p>
                 </div>
             </div>       
         </div>

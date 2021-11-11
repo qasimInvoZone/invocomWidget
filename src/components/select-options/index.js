@@ -18,9 +18,35 @@ const displayQuestions = (questions) => {
     })
  }
 const chooseoptions1 = (props) => {
+   const history = useHistory();
+   const question1 = props.questions.Screen2[0].Questions;
+   const question2 = props.questions.Screen2[1].Questions;
+   const question3 = props.questions.Screen2[2].Questions;
+   const question4 = props.questions.Screen2[3].Questions;
+   const [messages , setMessages] = useState([]);
+   const [count , setCount] = useState(1);
+   const renderQuestions = (questions) => {
+      return questions.map((question)=>{
+         console.log("count",count)
+         console.log("messages",messages)
+         return <div className="second-options" onClick={()=> {setCount(count+1); const allMessages = [...messages, question] ;setMessages(allMessages)}}>
+         <p className='second-option-text'>{question}</p>
+     </div>
+      })
+   }
 return(
         <div className="container second-screen mb-6">
-           {displayQuestions(props.questions)}
+           {
+            count == 1 ? renderQuestions(question1) :
+             count == 2 ? renderQuestions(question2) : 
+             count == 3 ? renderQuestions(question3) : 
+             count == 4 ? renderQuestions(question4) :
+             count == 5 ? history.push({
+               pathname: '/form',
+               state: { messages }
+             }) :
+             ''
+            }
         </div>
 );
 }

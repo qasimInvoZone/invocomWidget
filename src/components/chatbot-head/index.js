@@ -1,6 +1,7 @@
 
 import React from "react";
 import {useHistory} from 'react-router-dom';
+import Admins from '../../assets/images/admin.png';
 import '../../assets/styles/global.scss';
 
 const chatHead = () => {
@@ -10,10 +11,11 @@ const history = useHistory();
 
 return(
         <div className="rounded-tr-lg rounded-tl-lg bot-head bg-blue-500 p-4">
-            
-            <h3 onClick={() => history.push('/')} className="text-lg font-semibold text-white">InvoCom</h3>
-            
-            <p className="text-sm text-white">What can I help learn more about?</p>
+            <div className="flex items-center">        
+                    <img src={Admins} alt="admins" />
+                    <h3 onClick={() => history.push('/')} className="text-xl font-semibold text-white">InvoCom</h3>
+            </div>    
+            <p className="text-sm text-white ml-2">What can I help learn more about?</p>
         </div>
 
 );
