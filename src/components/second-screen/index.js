@@ -36,7 +36,7 @@ const SecondScreen = () => {
               
             </div>
             <div className="p-4 h-50 overflow-auto">
-              <BotDialogues1 />
+              {/* <BotDialogues1 /> */}
               <ChooseOption1 questions={questions}/>
             </div>
           </div>

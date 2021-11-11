@@ -36,6 +36,20 @@ const chooseoptions1 = (props) => {
    }
 return(
         <div className="container second-screen mb-6">
+           {count == 1 ? <div>
+           <p className="text-sm mb-3">{props.questions.Screen2[count-1].questionStatement}</p>
+         </div> : ""}
+         {count == 2 ? <div>
+           <p className="text-sm mb-3">{props.questions.Screen2[count-1].questionStatement}</p>
+         </div> : ""}
+         {count == 3 ? <div>
+           <p className="text-sm mb-3">{props.questions.Screen2[count-1].questionStatement}</p>
+         </div> : ""}
+         {count == 4 ? <div>
+           <p className="text-sm mb-3">{props.questions.Screen2[count-1].questionStatement}</p>
+         </div> : ""}
+
+           
            {
             count == 1 ? renderQuestions(question1) :
              count == 2 ? renderQuestions(question2) : 
