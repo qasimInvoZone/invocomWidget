@@ -27,9 +27,7 @@ export const BotDialogues4 = () => {
     return(
       
            <div className="text-container">
-               <p className="text-xs text-gray-400">Iz bot 11:54 am</p>
-               <p className="text-sm mb-3">Please confirm your your contact information and best time to meet, We will send an appointment to your calender instantly.</p>
-               <p className="text-sm mb-3">Please select the date and time that you're available, also confirm your email address</p>
+               <p className="text-sm mb-1">Please select the date and time that you're available, also confirm your email address</p>
            </div>
            
     );
@@ -102,9 +100,9 @@ export const BotDialogues4 = () => {
                     <input type="text" required placeholder="Full Name" className="input-wrapper mt-2" onChange={(e) => { setFullname(e.target.value) }}/><br />
                     <input type="text" required placeholder="Username" className="input-wrapper mt-2" onChange={(e) => { setUsername(e.target.value) }}/><br />
                     {email == '' || username == '' || fullname == '' ? 
-                        (<div className="invalid-data"><span> Cannot set Empty user data </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button></div> )
-                        : isExist? <div className="user-exist"><span> User Already Exists </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">send</button></div> 
-                        : <button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white" onClick={() => registerUser()}>send</button>
+                        (<div className="invalid-data"><span> Cannot set Empty user data </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">Send</button></div> )
+                        : isExist? <div className="user-exist"><span> User Already Exists </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">Send</button></div> 
+                        : <button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white" onClick={() => registerUser()}>Send</button>
                         
                     }
                 </div>

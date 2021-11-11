@@ -35,33 +35,34 @@ const chooseoptions1 = (props) => {
       })
    }
 return(
+        <>
         <div className="container second-screen mb-6">
-           {count == 1 ? <div>
-           <p className="text-sm mb-3">{props.questions.Screen2[count-1].questionStatement}</p>
-         </div> : ""}
-         {count == 2 ? <div>
-           <p className="text-sm mb-3">{props.questions.Screen2[count-1].questionStatement}</p>
-         </div> : ""}
-         {count == 3 ? <div>
-           <p className="text-sm mb-3">{props.questions.Screen2[count-1].questionStatement}</p>
-         </div> : ""}
-         {count == 4 ? <div>
-           <p className="text-sm mb-3">{props.questions.Screen2[count-1].questionStatement}</p>
-         </div> : ""}
+      {count == 1 ? <div>
+         <p className="text-sm mb-3">{props.questions.Screen2[count - 1].questionStatement}</p>  
+      </div> : ""}
+      {count == 2 ? <div>
+         <p className="text-sm mb-3">{props.questions.Screen2[count - 1].questionStatement}</p>  
+      </div> : ""}
+      {count == 3 ? <div>
+         <p className="text-sm mb-3">{props.questions.Screen2[count - 1].questionStatement}</p>  
+      </div> : ""}
+      {count == 4 ? <div>
+         <p className="text-sm mb-3">{props.questions.Screen2[count - 1].questionStatement}</p>  
+      </div> : ""}
 
-           
-           {
-            count == 1 ? renderQuestions(question1) :
-             count == 2 ? renderQuestions(question2) : 
-             count == 3 ? renderQuestions(question3) : 
-             count == 4 ? renderQuestions(question4) :
-             count == 5 ? history.push({
-               pathname: '/form',
-               state: { messages }
-             }) :
-             ''
-            }
-        </div>
+
+   </div>
+   <div className="container second-screen">
+         {count == 1 ? renderQuestions(question1) :
+            count == 2 ? renderQuestions(question2) :
+               count == 3 ? renderQuestions(question3) :
+                  count == 4 ? renderQuestions(question4) :
+                     count == 5 ? history.push({
+                        pathname: '/form',
+                        state: { messages }
+                     }) :
+                        ''}
+      </div></>
 );
 }
 export default chooseoptions1;

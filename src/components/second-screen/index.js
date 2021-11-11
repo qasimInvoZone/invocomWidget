@@ -30,18 +30,18 @@ const SecondScreen = () => {
 
   return (
     <div className="complete_bot second_screen_size">
-          <div className=" border border-blue-400 rounded-lg">
+          <div className=" border border-blue-400 rounded-lg" style={{height: '100%'}}>
             <ChatHead />
             <div className="message_body">
-              
-            </div>
             <div className="p-4 h-50 overflow-auto">
               {/* <BotDialogues1 /> */}
               <ChooseOption1 questions={questions}/>
             </div>
+            </div>
+          
           </div>
       <div className="chat_icon">
-  {/* <img onClick={() => setQuestions(!questions)} src={messageicon} alt="" /> */}
+  <img onClick={() => setQuestions(!questions)} src={messageicon} alt="" />
 </div>
     </div>
   );

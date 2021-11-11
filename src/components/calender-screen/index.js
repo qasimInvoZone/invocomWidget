@@ -15,11 +15,11 @@ return(
        
         {chat? 
          <>
-         <div className=" border border-blue-500 rounded-lg">
+         <div className=" border border-blue-500 rounded-lg" style={{height: '100%'}}>
 
          <ChatHead />
             
-        <div className="px-6 pt-2" style={{height: '185px'}}>
+        <div className="px-6 pt-2" >
         <BotDialogues4 />
         </div>
                 <div className="px-4 ">
