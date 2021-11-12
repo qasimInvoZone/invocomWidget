@@ -32,7 +32,7 @@ const SecondScreen = () => {
     <div className="complete_bot second_screen_size">
           <div className=" border border-blue-400 rounded-lg" style={{height: '100%'}}>
             <ChatHead />
-            <div className="message_body">
+            <div className="message_body mt-14">
             <div className="p-4 h-50 overflow-auto">
               {/* <BotDialogues1 /> */}
               <ChooseOption1 questions={questions}/>
