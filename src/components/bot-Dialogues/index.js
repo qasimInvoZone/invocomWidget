@@ -56,6 +56,7 @@ export const BotDialogues4 = () => {
         const [isExist, setIsExist] = useState(false)
         const history = useHistory();
         const [emailError, setEmailError] = useState(false)
+        const [showError, setShowError] = useState(false)
         const validateEmail = (e) => {
             setEmail(e.target.value)
             if (validator.isEmail(email)) {
@@ -66,6 +67,10 @@ export const BotDialogues4 = () => {
     }
 
         const registerUser = async () => {
+            if(isExist || fullname == '' || username == ''  || email == '' || emailError){
+                setShowError(true);
+                return;
+            }
             const baseUrl = process.env.REACT_APP_INVOCOM_API_URL
             const apiVersion = process.env.REACT_APP_INVOCOM_API_VERSION
             const entity = 'user'
@@ -96,15 +101,14 @@ export const BotDialogues4 = () => {
                 </div>
                 <div className="form-wrapper">
                     <input type="email" required placeholder="Email Address" className="input-wrapper" onChange={(e) => validateEmail(e)}/><br />
-                    {emailError? <span>Invalid Email</span> : '' }
+                    {emailError && showError? <span>Invalid Email</span> : '' }
+                    {isExist? <div className="user-exist"><span> User Already Exists </span></div> : ''}
+                    {email == '' && showError? <span> Cannot set Empty user data </span> : "" }
                     <input type="text" required placeholder="Full Name" className="input-wrapper mt-2" onChange={(e) => { setFullname(e.target.value) }}/><br />
+                    {username == '' && showError? <span> Cannot set Empty user data </span>: "" }
                     <input type="text" required placeholder="Username" className="input-wrapper mt-2" onChange={(e) => { setUsername(e.target.value) }}/><br />
-                    {email == '' || username == '' || fullname == '' ? 
-                        (<div className="invalid-data"><span> Cannot set Empty user data </span><button className="bg-blue-500 rounded py-2 px-2 mt-2 text-sm text-white">Send</button></div> )
-                        : isExist? <div className="user-exist"><span> User Already Exists </span><button className="bg-blue-500 rounded py-2 px-2 mt-2 text-sm text-white">Send</button></div> 
-                        : <button className="bg-blue-500 rounded py-2 px-2 mt-2 text-sm text-white" onClick={() => registerUser()}>Send</button>
-                        
-                    }
+                    {fullname == '' && showError? <span> Cannot set Empty user data </span>: "" }
+                    <button className="bg-blue-500 rounded py-2 px-2 mt-2 text-sm text-white" onClick={() => registerUser()}>Send</button>
                 </div>
                 </>
             );
