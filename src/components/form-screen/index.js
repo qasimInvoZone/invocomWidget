@@ -24,7 +24,7 @@ return(
 
          <ChatHead />
 
-                <div className="p-4 mt-2">
+                <div className="p-4 mt-14">
                 <div>
                 {message ?
                     <Form message={message}/> : 

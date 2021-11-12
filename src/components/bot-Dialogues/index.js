@@ -102,7 +102,7 @@ export const BotDialogues4 = () => {
                     {email == '' || username == '' || fullname == '' ? 
                         (<div className="invalid-data"><span> Cannot set Empty user data </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">Send</button></div> )
                         : isExist? <div className="user-exist"><span> User Already Exists </span><button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white">Send</button></div> 
-                        : <button className="bg-blue-500 rounded py-1 px-2 mt-2 text-xs text-white" onClick={() => registerUser()}>Send</button>
+                        : <button className="bg-blue-500 rounded py-2 px-2 mt-2 text-xm text-white" onClick={() => registerUser()}>Send</button>
                         
                     }
                 </div>
