@@ -102,12 +102,12 @@ export const BotDialogues4 = () => {
                 <div className="form-wrapper">
                     <input type="email" required placeholder="Email Address" className="input-wrapper" onChange={(e) => validateEmail(e)}/><br />
                     {emailError && showError? <span>Invalid Email</span> : '' }
-                    {isExist? <div style={{color: "red"}}><span> User Already Exists </span></div> : ''}
-                    {email == '' && showError? <div style={{color: "red"}}><span> Cannot set Empty user data </span></div> : "" }
+                    {isExist? <div style={{color: "red"}}>User Already Exists</div> : ''}
+                    {email == '' && showError? <div style={{color: "red"}}> Cannot set Empty Email </div> : "" }
                     <input type="text" required placeholder="Full Name" className="input-wrapper mt-2" onChange={(e) => { setFullname(e.target.value) }}/><br />
-                    {username == '' && showError? <div style={{color: "red"}}><span> Cannot set Empty user data </span></div>: "" }
+                    {username == '' && showError? <div style={{color: "red"}}>Cannot set Empty fullname</div>: "" }
                     <input type="text" required placeholder="Username" className="input-wrapper mt-2" onChange={(e) => { setUsername(e.target.value) }}/><br />
-                    {fullname == '' && showError? <div style={{color: "red"}}><span> Cannot set Empty user data </span></div>: "" }
+                    {fullname == '' && showError? <div style={{color: "red"}}>Cannot set Empty username</div>: "" }
                     <button className="bg-blue-500 rounded py-2 px-2 mt-2 text-sm text-white" onClick={() => registerUser()}>Send</button>
                 </div>
                 </>
