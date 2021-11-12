@@ -103,11 +103,11 @@ export const BotDialogues4 = () => {
                     <input type="email" required placeholder="Email Address" className="input-wrapper" onChange={(e) => validateEmail(e)}/><br />
                     {emailError && showError? <span>Invalid Email</span> : '' }
                     {isExist? <div className="user-exist"><span> User Already Exists </span></div> : ''}
-                    {email == '' && showError? <span> Cannot set Empty user data </span> : "" }
+                    {email == '' && showError? <div className="user-exist"><span> Cannot set Empty user data </span></div> : "" }
                     <input type="text" required placeholder="Full Name" className="input-wrapper mt-2" onChange={(e) => { setFullname(e.target.value) }}/><br />
-                    {username == '' && showError? <span> Cannot set Empty user data </span>: "" }
+                    {username == '' && showError? <div className="user-exist"><span> Cannot set Empty user data </span></div>: "" }
                     <input type="text" required placeholder="Username" className="input-wrapper mt-2" onChange={(e) => { setUsername(e.target.value) }}/><br />
-                    {fullname == '' && showError? <span> Cannot set Empty user data </span>: "" }
+                    {fullname == '' && showError? <div className="user-exist"><span> Cannot set Empty user data </span></div>: "" }
                     <button className="bg-blue-500 rounded py-2 px-2 mt-2 text-sm text-white" onClick={() => registerUser()}>Send</button>
                 </div>
                 </>
