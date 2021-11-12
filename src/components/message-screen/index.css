@@ -51,7 +51,7 @@
 .message-main.sender .comment_item {
   text-align: end;
 }
-.message-main.reciever{
+.message-main.sender{
   justify-content: end;
 }
 .message-main {
