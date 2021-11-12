@@ -11,8 +11,8 @@ moment().format();
 const displayQuestions = (questions) => {    
     return questions.map((question) => {
         return  <Link to={{ pathname: '/thirdscreen', state: { data: question} }}>
-                    <div className="second-options">
-                        <p className='second-option-text'>{question.questionStatement}</p>
+                    <div className="second-options" style={{minWidth: '100px'}}>
+                        <p className='second-option-text' style={{textAlign: 'center'}}>{question.questionStatement}</p>
                     </div>
                 </Link>
     })
