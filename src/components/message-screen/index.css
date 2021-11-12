@@ -4,8 +4,8 @@
   margin-bottom: 0.5rem;
   padding: 1rem;
   border-radius: 18px;
-  background: #fff;
-  border: 1px solid #f6f6f6;
+  background: #d3d3d361;
+  border: 1px solid #d3d3d361;
   box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.07);
   width: max-content;
   word-break: break-all;
@@ -13,7 +13,7 @@
 .comment p{
   font-size: 12px;
   float: right;
-  color: #d9d8d8;
+  color: darkgrey;
 }
 
 .comment_item {
