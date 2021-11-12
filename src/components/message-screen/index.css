@@ -43,17 +43,17 @@
   background-color: rgb(0, 132, 255);
   border-radius: 50%;
 }
-.message-main.sender .comment {
+.message-main.reciever .comment {
   background-color: #4182f6;
   color: #fff;
 }
 
-.message-main.reciever .comment_item {
+.message-main.sender .comment_item {
   text-align: end;
 }
-/* .message-main.reciever{
+.message-main.reciever{
   justify-content: end;
-} */
+}
 .message-main {
   display: flex;
   align-items: center;
