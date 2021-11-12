@@ -51,9 +51,11 @@
 .message-main.reciever .comment_item {
   text-align: end;
 }
+.message-main.reciever{
+  justify-content: end;
+}
 .message-main {
   display: flex;
-  justify-content: space-around;
   align-items: center;
   margin-top: 10px;
 }
