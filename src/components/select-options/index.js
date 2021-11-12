@@ -29,8 +29,8 @@ const chooseoptions1 = (props) => {
       return questions.map((question)=>{
          console.log("count",count)
          console.log("messages",messages)
-         return <div className="second-options" onClick={()=> {setCount(count+1); const allMessages = [...messages, question] ;setMessages(allMessages)}}>
-         <p className='second-option-text'>{question}</p>
+         return <div style={{minWidth: '100px'}} className="second-options" onClick={()=> {setCount(count+1); const allMessages = [...messages, question] ;setMessages(allMessages)}}>
+         <p style={{textAlign: 'center'}} className='second-option-text'>{question}</p>
      </div>
       })
    }
