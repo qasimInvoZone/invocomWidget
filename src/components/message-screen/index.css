@@ -49,6 +49,7 @@
 
 .message-main.reciever .comment_item {
   text-align: end;
+  background-color: #000000;
 }
 .message-main {
   display: flex;
