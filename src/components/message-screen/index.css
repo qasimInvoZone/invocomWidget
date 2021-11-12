@@ -42,14 +42,13 @@
   background-color: rgb(0, 132, 255);
   border-radius: 50%;
 }
-.message-main.sender .comment {
+.message-main-sender  {
   background-color: #4182f6;
   color: #fff;
 }
 
-.message-main.reciever .comment_item {
-  text-align: end;
-  background-color: #000000;
+.message-main-reciever {
+background-color: #69778a;
 }
 .message-main {
   display: flex;
