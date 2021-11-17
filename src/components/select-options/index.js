@@ -97,26 +97,30 @@ export const Chooseoptions2 = (props) => {
       const [time , setTime] = useState('');
       const email = localStorage.getItem('userEmail');
       const setMeeting = async () => {
-         const baseUrl = process.env.REACT_APP_INVOCOM_API_URL
-         const apiVersion = process.env.REACT_APP_INVOCOM_API_VERSION
-         const entity = 'meeting'
-         const endPoint = `${baseUrl}/${apiVersion}/${entity}/schedule`
-         let hoursAndMinutes = time.split(':');
-         let updatedDate = moment(date).set("hours",hoursAndMinutes[0]).set("minutes",hoursAndMinutes[1]).set("seconds",'00').toDate();
-         try {
-            const response = await axios.post(endPoint, { date:updatedDate, email:email })
-            if (response.status === 200) {
-               localStorage.setItem('isMeeting',true);
-               history.push("/message");
-            } else {
+         if(date != '' && time != ''){
+            const baseUrl = process.env.REACT_APP_INVOCOM_API_URL
+            const apiVersion = process.env.REACT_APP_INVOCOM_API_VERSION
+            const entity = 'meeting'
+            const endPoint = `${baseUrl}/${apiVersion}/${entity}/schedule`
+            let hoursAndMinutes = time.split(':');
+            let updatedDate = moment(date).set("hours",hoursAndMinutes[0]).set("minutes",hoursAndMinutes[1]).set("seconds",'00').toDate();
+            try {
+               const response = await axios.post(endPoint, { date:updatedDate, email:email })
+               if (response.status === 200) {
+                  localStorage.setItem('isMeeting',true);
+                  history.push("/message");
+               } else {
+                  localStorage.setItem('isMeeting',false);
+                  window.alert('slot already booked'); 
+               }
+            } catch (e) {
                localStorage.setItem('isMeeting',false);
-               window.alert('slot already booked');
-               
+               window.alert('Slot already booked please please try another Date & Time');
             }
-         } catch (e) {
-            localStorage.setItem('isMeeting',false);
-            window.alert('Slot already booked please please try another Date & Time');
+         } else {
+            window.alert('Please select Date & Time');
          }
+         
       }
       const days = []
       const dateStart = moment()
