@@ -45,8 +45,8 @@ return(
                 </div>
             </div>
            <div className="p-6" > 
-            <h2 className="text-lg  font-semibold">Hi, I’m here to help you find your way.</h2>
-            <h3 className="text-base  text-gray-400">{questions.Screen1.questionStatement}</h3>
+            <h2 className="text-lg  font-semibold">{configObj? configObj.backgroundStatus : "Hi, I’m here to help you find your way."}</h2>
+            <h3 className="text-base  text-gray-400">{configObj? configObj.message : "What would you like to do?"}</h3>
             </div>
 
             <div className="mt-4 p-6" >

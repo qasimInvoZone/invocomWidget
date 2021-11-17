@@ -14,7 +14,7 @@ export function APIContextProvider({ children }) {
       // remember: await can only be used within async functions!
       //`${process.env.REACT_APP_INVOCOM_API_URL}/${process.env.REACT_APP_INVOCOM_API_URL}/user/config`
       const { data } = await axios.get(
-        `http://stormy-sierra-19463.herokuapp.com/api/v1/user/config`
+        `${process.env.REACT_APP_INVOCOM_API_URL}/${process.env.REACT_APP_INVOCOM_API_VERSION}/user/config`
       );
       // update local state with the retrieved data 
       setData(data);
