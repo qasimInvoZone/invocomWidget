@@ -60,9 +60,11 @@ return(
                     <p className='First-option-text'>{questions.Screen1.Questions[1]}</p>
                 </div>
                 </Link>
+                <Link to="/form">
                 <div className="First-options">
                     <p className='First-option-text'>{questions.Screen1.Questions[2]}</p>
                 </div>
+                </Link>
             </div>       
         </div>
    
