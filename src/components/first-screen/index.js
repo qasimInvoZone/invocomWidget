@@ -35,9 +35,9 @@ return(
 <div className="" style={{position:"relative", top:"30px"}}>
     {chat? 
 
-        <div className=" border rounded-lg align-bottom" style={{borderColor: configObj?.backgroundColor,height:"550px"}}>
-            <div className="header-wrapper" style={{backgroundColor: configObj?.backgroundColor }}>
-                <div className="text-lg font-semi-bold" style={{bbackgroundColor: configObj?.backgroundColor}}>
+        <div className=" border rounded-lg align-bottom">
+            <div className="header-wrapper">
+                <div className="text-lg font-semi-bold">
                    <b>InvoCom</b>
                 </div>
                 <div className="text-sm">
@@ -45,22 +45,22 @@ return(
                 </div>
             </div>
            <div className="p-6" > 
-            <h2 className="text-lg  font-semibold">{configObj? configObj.backgroundStatus : "Hi, I’m here to help you find your way."}</h2>
-            <h3 className="text-base  text-gray-400">{configObj? configObj.message : "What would you like to do?"}</h3>
+            <h2 className="text-lg  font-semibold">{configObj?.backgroundStatus}</h2>
+            <h3 className="text-base  text-gray-400">{configObj?.message}</h3>
             </div>
 
             <div className="mt-4 p-6" >
                 <Link to="/secondscreen">
-                <div className="First-options" style={{backgroundColor: configObj?.backgroundColor}}>
+                <div className="First-options">
                     <p className='First-option-text'>{questions.Screen1.Questions[0]}</p>
                 </div>
                 </Link>
                 <Link to="/form">
-                <div className="First-options" style={{backgroundColor: configObj?.backgroundColor}}>
+                <div className="First-options">
                     <p className='First-option-text'>{questions.Screen1.Questions[1]}</p>
                 </div>
                 </Link>
-                <div className="First-options" style={{backgroundColor: configObj?.backgroundColor}}>
+                <div className="First-options">
                     <p className='First-option-text'>{questions.Screen1.Questions[2]}</p>
                 </div>
             </div>       
