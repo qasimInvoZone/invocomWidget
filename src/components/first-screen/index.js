@@ -35,7 +35,7 @@ return(
 <div className="" style={{position:"relative", top:"30px"}}>
     {chat? 
 
-        <div className=" border rounded-lg align-bottom">
+        <div className=" border rounded-lg align-bottom" style={{height:"550px"}}>
             <div className="header-wrapper">
                 <div className="text-lg font-semi-bold">
                    <b>InvoCom</b>
