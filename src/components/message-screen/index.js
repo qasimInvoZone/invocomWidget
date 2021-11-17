@@ -76,6 +76,7 @@ const MessageScreen = () => {
   },[io,setChat])
 
   const renderChat = (chat) => {
+    console.log("chat :::::: ",chat);
     const leadName = localStorage.getItem('username')
     return chat.map((message) => {
       return  <div className={`message-main ${message.senderName == leadName?   'sender': 'reciever'}`}>
