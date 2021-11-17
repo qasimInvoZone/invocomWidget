@@ -93,7 +93,8 @@ const MessageScreen = () => {
   }
   return (
     <div className="complete_bot second_screen_size">
-        <>
+        {chat? 
+         <>
           <div className=" border border-blue-400 rounded-lg">
             <ChatHead />
             <div className="message_body" style={{height:"350px"}}>
@@ -101,7 +102,11 @@ const MessageScreen = () => {
             </div>
             <ChatFooter />
           </div>
-        </>
+          </>
+   
+   :
+    ''
+    }
       <div className="chat_icon">
   <img onClick={() => setChat(!chat)} src={messageicon} alt="" />
 </div>
