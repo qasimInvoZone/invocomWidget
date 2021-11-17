@@ -95,7 +95,7 @@ const MessageScreen = () => {
   }
   return (
     <div className="complete_bot second_screen_size">
-        {chat? 
+        {isRender? 
          <>
           <div className=" border border-blue-400 rounded-lg">
             <ChatHead />
