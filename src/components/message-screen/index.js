@@ -21,6 +21,7 @@ const AlwaysScrollToBottom = () => {
 const MessageScreen = () => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [chat , setChat] = useState([]);
+  const [isRender , setIsRender] = useState(true);
   const ENDPOINT = process.env.REACT_APP_INVOCOM_API_URL;
   
   const fetchChats = async () => {
@@ -76,7 +77,7 @@ const MessageScreen = () => {
   },[io,setChat])
 
   const renderChat = (chat) => {
-    console.log("chat :::::: ",chat);
+    console.log("chat :::::: s",chat);
     const leadName = localStorage.getItem('username')
     return chat.map((message) => {
       return  <div className={`message-main ${message.senderName == leadName?   'sender': 'reciever'}`}>
@@ -109,7 +110,7 @@ const MessageScreen = () => {
     ''
     }
       <div className="chat_icon">
-  <img onClick={() => setChat(!chat)} src={messageicon} alt="" />
+  <img onClick={() => setIsRender(!isRender)} src={messageicon} alt="" />
 </div>
     </div>
   );
