@@ -108,7 +108,7 @@ export const BotDialogues4 = () => {
                     {fullname == '' && showError? <div style={{color: "red", fontSize: "12px", fontWeight:"bold"}}> * Cannot set Empty Fullname</div>: "" }
                     <input type="text" required placeholder="Username" className="input-wrapper mt-2" onChange={(e) => { setUsername(e.target.value) }}/><br />
                     {username == '' && showError? <div style={{color: "red", fontSize: "12px", fontWeight:"bold"}}> * Cannot set Empty Username</div>: "" }
-                    <button className="bg-blue-500 rounded py-2 px-2 mt-2 text-sm text-white" onClick={() => registerUser()}>Send</button>
+                    <button className="bg-blue-500 rounded py-3 px-2 mt-2 text-sm text-white" onClick={() => registerUser()}>Send</button>
                 </div>
                 </>
             );
