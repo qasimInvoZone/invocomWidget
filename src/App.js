@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React from 'react';///
 import { APIContextProvider } from "./components/context/widgetconfig"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import chatBot from './components/first-screen';
