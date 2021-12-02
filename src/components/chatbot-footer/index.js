@@ -24,6 +24,7 @@ const ChatFooter = () => {
         const email = localStorage.getItem('userEmail')
         try {
             const response = await axios.post(endPoint, { email, message })
+            console.log(response);
             if(response.status == 200){
                 setMessage('');
             }
@@ -43,10 +44,10 @@ return(
             <div className="input_container">
             <input className="outline-none" style={{width: '100%'}} type="text" value={message} placeholder="Type here..." onClick={() => setShowEmoji(false)} onChange={(e) => { setMessage(e.target.value) }} onKeyPress={(e) => handleKeyPress(e)}/>
             </div>
-            <div className="icon_container flex justify-end relative ">                
+            <div className="icon_container flex justify-end relative ">
                 {showEmoji ? (
                     <div className="emoji_picker">
-                        <Picker onEmojiClick={(event, emojiObject)=>onEmojiClick(event, emojiObject)} /> 
+                        <Picker onEmojiClick={(event, emojiObject)=>onEmojiClick(event, emojiObject)} />
                     </div>
                     ) : (
                     ''
