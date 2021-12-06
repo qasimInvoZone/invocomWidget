@@ -17,6 +17,7 @@ const mainScreen = () => {
   const [messages, setMessages] = useState([]);
   const [questions, setQuestions] = useState([]);
   const [showDialogue, setShowDialogue] = useState(true);
+  
   const toggleBot = useSelector((state) => state.isCrossedReducer);
   let dispatch = useDispatch();
   useEffect(() => {
@@ -43,7 +44,7 @@ const mainScreen = () => {
 
   const renderQuestions = (questionsArray) => {
     if (questionsArray?.childrens === undefined) {
-      navigate("/form-screen", { state: { allMessages } }); //redirect to form screen with messages[]
+      navigate("/form-screen", { state: { allMessages } });
     }
     return questionsArray?.childrens?.map((question) => {
       return (
@@ -52,11 +53,11 @@ const mainScreen = () => {
           onClick={() => {
             setIsBacktrack(true);
             allMessages = [...messages, question.question];
+            question.question === 'Educational Content' ? navigate("/blogs") : renderQuestions(question)
             setMessages(allMessages);
             const history = [...historyStack, questionsArray];
             setHistoryStack(history);
             setQuestions(question);
-            renderQuestions(question);
           }}
           className="option max-w-md w-max break-all border border-primary rounded p-2 hover:bg-primary hover:text-white hover:cursor-pointer"
         >

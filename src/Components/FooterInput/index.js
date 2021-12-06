@@ -23,7 +23,7 @@ const Footer = () => {
         const email = localStorage.getItem('userEmail')
         try {
             const response = await axios.post(endPoint, { email, message })
-            if(response.status == 200){
+            if(response.status === 200){
                 setMessage('');
             }
         } catch (e) {
@@ -38,8 +38,8 @@ const Footer = () => {
 
     return (
         <div className="footer w-lg h-inputfoot border border-primary border-t-0 flex items-center">
-            <div className="input_container w-full bg-lightGrey flex justify-between items-center px-3 relative">
-                <input type="text"  value={message} placeholder="Type your message here" onClick={() => setShowEmoji(false)} onChange={(e) => { setMessage(e.target.value) }} onKeyPress={(e) => handleKeyPress(e)}/>
+            <div className="input_container w-full bg-lightGrey flex justify-between items-center relative">
+                <input className="px-3" style={{width: '70%'}} type="text"  value={message} placeholder="Type your message here" onClick={() => setShowEmoji(false)} onChange={(e) => { setMessage(e.target.value) }} onKeyPress={(e) => handleKeyPress(e)}/>
                 {showEmoji ? (
                     <div className="emoji_picker">
                         <Picker onEmojiClick={(event, emojiObject)=>onEmojiClick(event, emojiObject)} /> 
@@ -48,14 +48,14 @@ const Footer = () => {
                     ''
                     )
                 }
-                <div className="button_container flex justify-evenly items-center">
+                <div className="button_container flex justify-evenly items-center ">
                     <img src={emoji} alt="" onClick={() => showEmoji? setShowEmoji(false) : setShowEmoji(true)}/>
                     <img src={link} alt="" />
                     <button onClick={() => sendMessage()}>
                         <img src={send} alt="" />
                     </button>
                 </div>
-                <div className="branding absolute ml-0 mb-0">
+                <div className="branding absolute ml-0 mb-0 py-1.5">
                     <p>Powered by <span>InvoZone</span></p>
                 </div>
             </div>

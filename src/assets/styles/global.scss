@@ -46,6 +46,7 @@
 .chat_body {
   .recieved {
     max-width: 260px;
+    min-width: 80px;
     p {
       color: white;
       font-size: 12px;
@@ -60,6 +61,7 @@
 
   .sent {
     max-width: 260px;
+    min-width: 80px;
     p {
       color: black;
       font-size: 12px;
@@ -72,7 +74,15 @@
     }
   }
 }
-
+.emoji_picker {
+  position:absolute;
+  top:0;
+  right :0 ;
+  transform: translateY(-100%);
+}
+.invalid-feedback{
+  color:crimson !important;
+}
 .message_body {
   .calendar_container {
   }

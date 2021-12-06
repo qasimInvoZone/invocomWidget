@@ -2,6 +2,7 @@ import React, {useState, useEffect, useRef} from "react";
 import '../../assets/styles/global.scss';
 import logo from '../../assets/logos/invocom-log.png';
 import { io } from "socket.io-client";
+import uuid from "react-uuid";
 require('dotenv').config()
 var moment = require('moment');
 const Chat = () => {
@@ -12,9 +13,9 @@ const Chat = () => {
         return chat.map((message) => {
             const isSender = message.senderName === leadName;
             return(
-                    <div className={`flex ${isSender?   'justify-end' : 'justify-start'} p-2`}>
-                    <div className='chat_message_container flex '>{!isSender? <img src={logo} alt=''/> : ''}</div>
-                        <div className={`${isSender?  'sent': 'recieved'  } w-max p-3 pb-4 rounded-lg ${isSender?   'bg-secondary': 'bg-primary'} break-all relative`}>
+                    <div key={uuid()} className={`flex ${isSender?   'justify-end' : 'justify-start'} p-2`}>
+                    <div className='chat_message_container'>{!isSender? <img src={logo} alt=''/> : ''}</div>
+                        <div className={`${isSender?  'sent': 'recieved'} w-max p-3 pb-4 rounded-lg ${isSender?   'bg-secondary': 'bg-primary'} break-all relative`}>
                             <p> {message.message} </p>
                             <small>{moment(message.createdAt).format("hh:mm a")} </small>
                         </div>
@@ -80,7 +81,7 @@ const Chat = () => {
             setChat(updatedChat.messages)
           }
         })
-      },[io])
+      },[])
       const AlwaysScrollToBottom = () => {
         const elementRef = useRef();
         useEffect(() => elementRef.current.scrollIntoView());

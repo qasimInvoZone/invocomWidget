@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { hideBot } from '../../Redux/Actions/crossAction.js';
 import logo from '../../assets/logos/invocom-log.png';
@@ -6,12 +6,23 @@ import Header from '../../Components/Header';
 import Brand from '../../Components/Brand';
 import Calendar from '../../Components/Calendar';
 import '../../assets/styles/global.scss';
+import { useNavigate } from "react-router-dom";
+
+
 var moment = require('moment');
 moment().format();
 
 const CalendarScreen = () => {
   const toggleBot = useSelector((state) => state.isCrossedReducer);
+  
   let dispatch = useDispatch();
+  const navigate = useNavigate();
+  useEffect(()=>{
+    const email = localStorage.getItem('userEmail');
+    if(!email){
+      navigate("/")
+    }
+  })
   return (
     <div className='complete_bot absolute'>
       {toggleBot ? (

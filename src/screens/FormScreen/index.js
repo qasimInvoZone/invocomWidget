@@ -6,13 +6,20 @@ import logo from "../../assets/logos/invocom-log.png";
 import Header from "../../Components/Header";
 import { sendUserData, sendChatData } from "../../Components/Form/index";
 import Brand from "../../Components/Brand";
+import { AvForm, AvField} from 'availity-reactstrap-validation';
 import "../../assets/styles/global.scss";
 
 const FormScreen = () => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [fullname, setFullname] = useState("");
-  // const [chat, setChat] = useState('')
+  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [fullname, setFullname] = useState('');
+  const handleValidSubmit = (values) => {
+    setEmail({ email: values.email });
+  };
+  const handleInvalidSubmit = (event, errors, values) => {
+    setEmail({ email: values.email, error: true });
+  };
+
   const navigate = useNavigate();
   let message = [];
 
@@ -23,8 +30,7 @@ const FormScreen = () => {
   const toggleBot = useSelector((state) => state.isCrossedReducer);
   let dispatch = useDispatch();
 
-  async function formHandler(event) {
-    event.preventDefault();
+  async function formHandler() {
     try {
       const role = "USER";
       const user = await sendUserData({
@@ -65,30 +71,36 @@ const FormScreen = () => {
                   fill in the details below and we'll zone in your project in no
                   time!
                 </p>
-                <form onSubmit={formHandler}>
-                  <input
-                    type="text"
-                    placeholder="Email"
+                <AvForm
+                  onValidSubmit={handleValidSubmit}
+                  onInvalidSubmit={handleInvalidSubmit}
+                >
+                  <AvField
+                    style={{ margin: '0' }}
+                    name='email'
+                    type='email'
+                    placeholder='Email'
+                    onChange={(e) => setEmail(e.target.value)}
                     required
-                    value={email}
-                    onChange={(event) => setEmail(event.target.value)}
+                    
                   />
-                  <input
-                    type="text"
-                    placeholder="Full Name"
+                  <AvField
+                    name='name'
+                    type='Full name'
+                    placeholder='Full name'
+                    onChange={(e) => setFullname(e.target.value)}
                     required
-                    value={fullname}
-                    onChange={(event) => setFullname(event.target.value)}
                   />
-                  <input
-                    type="text"
-                    placeholder="Username"
+
+                  <AvField
+                    name='username'
+                    type='Username'
+                    placeholder='Username'
+                    onChange={(e) => setUsername(e.target.value)}
                     required
-                    value={username}
-                    onChange={(event) => setUsername(event.target.value)}
                   />
-                  <button type="submit">Submit</button>
-                </form>
+                </AvForm>
+                <button onClick={()=> formHandler()}>Submit</button>
               </div>
             </div>
           </div>

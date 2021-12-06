@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-no-target-blank */
 /* eslint-disable react-hooks/rules-of-hooks */
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
 import logo from '../../assets/logos/invocom-log.png';
 import invoNews from '../../assets/logos/invoNews.png';
 import invoLogo from '../../assets/logos/invozone-logo.png';
@@ -42,7 +41,7 @@ const Blog = () => {
                     <a
                       href='https://www.linkedin.com/company/invonews/'
                       target='_blank'
-                      class='text-sm  underline font-medium text-primary hover:text-indigo-500'
+                      className='text-sm  underline font-medium text-primary hover:text-indigo-500'
                     >
                       Visit Page
                     </a>
@@ -75,7 +74,7 @@ const Blog = () => {
                     <a
                       href='https://www.linkedin.com/company/invozone/'
                       target='_blank'
-                      class='text-sm  underline font-medium text-primary hover:text-indigo-500'
+                      className='text-sm  underline font-medium text-primary hover:text-indigo-500'
                     >
                       Visit Page
                     </a>
